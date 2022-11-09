@@ -319,7 +319,7 @@ def run(
 
     # FIXME: for now, calculate the grid in cpu
     # I need to benchmark performance of it when grid is created on cuda
-    tmp_device = torch.device("cpu")
+    tmp_device = horizon.device
     if horizon.device.type == "cuda" and dtype == torch.float16:
         tmp_dtype = torch.float32
     else:
